@@ -1,7 +1,4 @@
 // GameMaker Language Preview (Read-Only)
 
-// Get Random Number
-direction = (random_range(0, 359));
-
-// Set Speed
+direction = irandom_range(0, 359);
 speed = 1;

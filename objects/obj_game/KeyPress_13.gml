@@ -1,9 +1,8 @@
 // GameMaker Language Preview (Read-Only)
 // started as l432DED76_0
 // Switch
-var chooseRoom = room;
-switch(chooseRoom)
-{
+//var chooseRoom = room;
+switch(room) {
 	// Case
 	case rm_start:
 		// Go To Room

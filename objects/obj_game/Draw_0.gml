@@ -1,3 +1,69 @@
+// well this code is a lot better than the GMS2 generated GML that's for sure
+// and didn't even use any Bitwise Operators
+
+switch (room)
+{
+case rm_game:
+    draw_text(20, 20, "SCORE: " + string(score));
+    draw_text(20, 40, "LIVES: " + string(lives));
+    break;
+
+case rm_start:
+/*
+	Note that we use the "@" to prefix the string we are wanting to draw, 
+	and we have the string split over multiple lines. Using "@" like this 
+	tells GameMaker Studio 2 that you are defining a string literal, which 
+	means that the string will be drawn with line breaks and other special 
+	characters, without the need for escape characters
+*/
+	    draw_set_halign(fa_center);
+		var c = c_yellow;
+		draw_text_transformed_colour(room_width / 2, 100, "SPACE ROCKS", 3, 3, 0, c, c, c, c, 1);
+		
+		draw_text(room_width / 2, 200, 
+		// @ is essentially the GML version of the "pre" tag in HTML
+@"Score 1,000 points to win!
+
+UP: move
+LEFT/RIGHT: change direction
+SPACE: shoot
+>>PRESS ENTER TO START<<");		
+	    draw_set_halign(fa_left);
+
+    break;
+
+case rm_win:
+	    draw_set_halign(fa_center);
+	    var c = c_lime;
+	    draw_text_transformed_colour(room_width / 2, 200, "YOU WON!", 3, 3, 0, c, c, c, c, 1);
+	    draw_text(room_width / 2, 300, "PRESS ENTER TO RESTART");
+	    draw_set_halign(fa_left);
+    break;
+
+case rm_gameover:
+	    draw_set_halign(fa_center);
+	    var c = c_red;
+	    draw_text_transformed_colour(room_width / 2, 150, "GAME OVER", 3, 3, 0, c, c, c, c, 1);
+	    draw_text(room_width / 2, 250, "FINAL SCORE: " + string(score));
+	    draw_text(room_width / 2, 300, "PRESS ENTER TO RESTART");
+	    draw_set_halign(fa_left);
+    break;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // this'll be fun
 
 // I think it's just not just a swtich against regular reserved value "room" 
@@ -10,6 +76,15 @@
 	iGameLives = 5;
 *****/
 
+
+
+/******************  this is my ill-fated attempt at leaving the GMS2-generated code in
+I'm instead just going to use the written tutorial code
+https://www.yoyogames.com/en/tutorials/space-rocks-gml#
+
+******************/
+
+/******************
 
 var room_state = room;
 
@@ -41,6 +116,7 @@ switch (room_state) {
 				
 				draw_set_halign(fa_center);
 				draw_set_valign(fa_top);
+				******************/
 				
 				// color
 				//draw_set_color( c_yellow ); // writing 'c_yellow' instead of $ff00ffff, why not?
@@ -54,6 +130,7 @@ switch (room_state) {
 						draw_set_alpha(l35CBC932_0 / $ff);
 				*/
 				// okay i'll just paste it in. new var name though
+				/******************
 				draw_set_colour($FF00FFFF & $ffffff);
 				var iBitWiseStore=($FF00FFFF >> 24);
 				draw_set_alpha(iBitWiseStore / $ff);
@@ -164,7 +241,7 @@ switch (room_state) {
 
 
 
-
+******************/
 
 
 
